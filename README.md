@@ -1,3 +1,15 @@
+Great — since your screenshots are in the screenshots folder in this repo:
+
+Repo:
+Nisargpatelx/splunk-siem-brute-force-detection-lab
+
+The correct GitHub image path format is:
+
+screenshots/filename.png
+
+Below is your correct README with real image links based on your folder.
+
+Complete README.md (with correct screenshot links)
 # Splunk SIEM Brute Force Detection Lab
 
 This project demonstrates a **Security Information and Event Management (SIEM) detection lab** built using **Splunk Enterprise** to detect brute-force login attempts on a Windows system.
@@ -8,14 +20,14 @@ The lab simulates a real SOC monitoring environment where Windows security logs 
 
 ## Lab Environment
 
-The lab was built using **VMware Workstation** with two virtual machines:
+The lab environment was built using **VMware Workstation** with two virtual machines.
 
-- **Ubuntu Server** running Splunk Enterprise (SIEM)
-- **Windows 11 Endpoint** generating security logs
+• Ubuntu Server running **Splunk Enterprise (SIEM)**  
+• Windows 11 endpoint generating security logs
 
-The Windows machine forwards logs to the Splunk server where detection queries analyze authentication activity.
+The Windows machine forwards logs to Splunk where detection queries analyze authentication activity.
 
-![VMware Lab Environment](Screenshot/vmware-lab-environment.png)
+![VMware Lab Environment](screenshots/vmware-lab-environment.png)
 
 ---
 
@@ -24,10 +36,10 @@ The Windows machine forwards logs to the Splunk server where detection queries a
 The SIEM detection pipeline works as follows:
 
 1. Windows endpoint generates **Security Event Logs**
-2. Event logs contain **failed login attempts (Event ID 4625)**
-3. **Splunk Universal Forwarder** sends logs to the Splunk server
+2. Failed login attempts are recorded as **Event ID 4625**
+3. Splunk Forwarder sends logs to the Splunk server
 4. Splunk indexes and analyzes the logs
-5. A detection rule identifies **multiple failed login attempts**
+5. Detection rule identifies **multiple failed login attempts**
 6. Splunk triggers a **security alert**
 
 ---
@@ -36,7 +48,7 @@ The SIEM detection pipeline works as follows:
 
 The detection rule identifies multiple failed login attempts occurring within a short time window.
 
-The following **Splunk Processing Language (SPL)** query was used:
+### SPL Detection Query
 
 
 sourcetype="WinEventLog:Security" EventCode=4625
@@ -51,41 +63,43 @@ This query detects brute-force login attempts by identifying multiple failed aut
 
 ## Detection Query Screenshot
 
-The screenshot below shows the detection query and results identifying failed login attempts.
+The screenshot below shows the **Splunk detection query and results**.
 
-![Splunk Detection Query](Screenshot/splunk-bruteforce-detection-query.png)
+![Splunk Detection Query](screenshots/splunk-bruteforce-detection-query.png)
 
 ---
 
-## Windows Security Event Logs
+## Windows Failed Login Event
 
 Windows records failed login attempts as **Event ID 4625** in the Security Event Log.
 
-These logs contain valuable information including:
+These events contain:
 
-- Account name
-- Source system
-- Logon type
-- Timestamp
-- Failure reason
+• Account name  
+• Source system  
+• Logon type  
+• Timestamp  
+• Failure reason  
 
-These events are forwarded to Splunk where they are analyzed for potential brute-force attacks.
+These logs are forwarded to Splunk where they are analyzed for brute-force activity.
 
-![Windows Event 4625](Screenshot/windows-eventid-4625-failed-login.png)
+![Windows Event 4625](screenshots/windows-eventid-4625-failed-login.png)
 
 ---
 
-## Alert Detection
+## Alert Triggered
 
-When the number of failed login attempts exceeds the configured threshold, Splunk triggers an alert indicating possible brute-force activity.
+When the threshold of failed login attempts is reached, Splunk triggers a **real-time security alert** indicating possible brute-force activity.
 
-The alert rule:
+![Splunk Alert Triggered](screenshots/splunk-alert-triggered.png)
 
-- Monitors failed authentication attempts
-- Detects repeated login failures
-- Generates a **real-time security alert**
+---
 
-![Splunk Triggered Alert](Screenshot/splunk-alert-triggered.png)
+## Additional Query Analysis
+
+Splunk search history and query execution used during detection development.
+
+![Query History](screenshots/splunk-detection-query-history.png)
 
 ---
 
@@ -93,36 +107,36 @@ The alert rule:
 
 This project demonstrates practical experience with:
 
-- SIEM monitoring
-- Splunk Enterprise configuration
-- Log ingestion and analysis
-- Windows Security Event Log analysis
-- Splunk SPL query development
-- Brute-force attack detection
-- Security alerting and monitoring
+• SIEM monitoring  
+• Splunk Enterprise configuration  
+• Log ingestion and analysis  
+• Windows Security Event Log investigation  
+• Splunk SPL query development  
+• Brute-force attack detection  
+• Security alerting and monitoring  
 
 ---
 
 ## Tools and Technologies
 
-- **Splunk Enterprise**
-- **Splunk Universal Forwarder**
-- **Windows Event Logs**
-- **VMware Workstation**
-- **Ubuntu Server**
-- **Windows 11**
+• Splunk Enterprise  
+• Splunk Universal Forwarder  
+• Windows Event Logs  
+• VMware Workstation  
+• Ubuntu Server  
+• Windows 11  
 
 ---
 
 ## Learning Outcomes
 
-Through this project, I gained hands-on experience with:
+Through this project I gained hands-on experience with:
 
-- Building a virtual SIEM lab environment
-- Ingesting endpoint logs into a SIEM
-- Developing detection rules using SPL
-- Investigating authentication events
-- Implementing alert-based threat detection
+• Building a SIEM lab environment  
+• Ingesting endpoint logs into Splunk  
+• Developing detection rules using SPL  
+• Investigating authentication events  
+• Implementing alert-based threat detection  
 
 ---
 
