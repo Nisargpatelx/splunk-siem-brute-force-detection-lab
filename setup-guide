@@ -1,1 +1,18 @@
+# Splunk SIEM Lab Setup
 
+Environment:
+VMware Workstation
+
+Machines:
+Ubuntu Server running Splunk Enterprise
+Windows 11 endpoint
+
+Setup Steps:
+
+1 Install Ubuntu VM
+2 Install Splunk Enterprise
+3 Install Windows VM
+4 Install Splunk Universal Forwarder
+5 Send Windows logs to Splunk
+6 Create SPL query for Event ID 4625
+7 Configure real-time brute force alert
