@@ -1,15 +1,4 @@
-Great — since your screenshots are in the screenshots folder in this repo:
 
-Repo:
-Nisargpatelx/splunk-siem-brute-force-detection-lab
-
-The correct GitHub image path format is:
-
-screenshots/filename.png
-
-Below is your correct README with real image links based on your folder.
-
-Complete README.md (with correct screenshot links)
 # Splunk SIEM Brute Force Detection Lab
 
 This project demonstrates a **Security Information and Event Management (SIEM) detection lab** built using **Splunk Enterprise** to detect brute-force login attempts on a Windows system.
